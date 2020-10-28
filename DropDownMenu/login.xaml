@@ -1,0 +1,150 @@
+﻿<Window x:Class="DropDownMenu.login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DropDownMenu" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Halaman Admin" Height="450" Width="380"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown">
+
+    <Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="20" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF42B5F7" Offset="0.0"/>
+                        <GradientStop Color="#FF5951FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <StackPanel Grid.Row="1">
+                <Button x:Name="Keluarlogin" Width="30" Height="30"
+                        HorizontalAlignment="Right"
+                        Margin="0,-410,10,0" Click="Exitlogin"
+                        Style="{StaticResource MaterialDesignFloatingActionButton}"
+                        materialDesign:ButtonAssist.CornerRadius="20"
+                        Background="Transparent" ToolTip="Tutup Aplikasi"
+                        BorderBrush="Transparent">
+
+                    <Grid Width="30" Height="30">
+                        <materialDesign:PackIcon Kind="Close" Width="30" 
+                                                 Height="30" Foreground="White" 
+                                                 HorizontalAlignment="Center"
+                                                 VerticalAlignment="Center"
+                                                 Margin="0"/>
+                    </Grid>
+                </Button>
+
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Center">
+                <Image Source="Assets/logo.png" Width="170"  Margin="5,10,5,0"/>
+                <TextBlock Text="Aplikasi BUMDES" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" 
+                           FontSize="20" FontFamily="Roboto Light" 
+                           Foreground="White"/>
+
+                <TextBlock Text="DESA UMA BERINGIN" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" 
+                           FontSize="20" FontFamily="Roboto Normal" 
+                           Foreground="White"/>
+
+                <TextBlock Text="Silahkan Masuk" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" 
+                           FontSize="15" FontFamily="Roboto Normal" 
+                           Foreground="White"
+                           Margin="0,25,0,10"/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <StackPanel Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="62,0">
+                        <Grid>
+                            <materialDesign:PackIcon Kind="Account" Foreground="White" 
+                                             Width="30" Height="30" Opacity="0.5"
+                                             VerticalAlignment="Center"
+                                             HorizontalAlignment="Center"/>
+                        </Grid>
+
+                        <TextBox x:Name="userid" Cursor="IBeam"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="White" ToolTip="Silahkan isi username anda"
+                           Background="Transparent"
+                           FontSize="20" Margin="1,0,0,0"
+                           FontFamily="Roboto Light" Width="221"
+                           BorderThickness="0"
+                           HorizontalContentAlignment="Left"
+                           materialDesign:HintAssist.Hint=" Username"
+                           materialDesign:HintAssist.HintOpacity="0.4"
+                           BorderBrush="White" CaretBrush="White" SelectionBrush="Black"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Margin="0,20">
+                    <StackPanel Orientation="Horizontal" Margin="62,0">
+                        <Grid>
+                            <materialDesign:PackIcon Kind="Lock" Foreground="White" 
+                                             Width="30" Height="30" Opacity="0.5"
+                                             VerticalAlignment="Center"
+                                             HorizontalAlignment="Center"/>
+                        </Grid>
+
+                        <PasswordBox x:Name="sandi" Cursor="IBeam"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="White" ToolTip="Silahkan isi kata sandi anda"
+                           Background="Transparent"
+                           FontSize="20" Margin="1,0,0,0"
+                           FontFamily="Roboto Light" Width="213"
+                           BorderThickness="0"
+                           HorizontalContentAlignment="Left"
+                           materialDesign:HintAssist.Hint=" Kata sandi" 
+                           materialDesign:HintAssist.HintOpacity="0.4"
+                           BorderBrush="White" CaretBrush="White" SelectionBrush="Black"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,20" HorizontalAlignment="Center">
+                    <Button Width="100" Height="40" Content="Masuk" 
+                            Margin="10,0" FontSize="18" FontWeight="Normal" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"  x:Name="Tombolmasuk"
+                            Click="masuk" ToolTip="Masuk ke aplikasi"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            materialDesign:ButtonAssist.CornerRadius="10">
+                    </Button>
+
+                    <Button Width="100" Height="40" Content="Keluar" 
+                            Margin="10,0" FontSize="18" FontWeight="Normal" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"  x:Name="Tomboldaftar"
+                            Click="Exitlogin" ToolTip="Keluar dari aplikasi"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            materialDesign:ButtonAssist.CornerRadius="10"/>
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>
